@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="?? ???? ???? ? ??? ?? ???? ?????" />
+    <title>????</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">?</span>
+          <span class="brand-text">????</span>
+        </div>
+        <nav class="actions" aria-label="????????">
+          <button id="themeToggle" class="btn" type="button" aria-pressed="false">???? ????</button>
+          <button id="langToggle" class="btn btn-ghost" type="button">EN</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="container hero-inner">
+        <h1 class="title" id="title-fa">???? ??</h1>
+        <h1 class="title hidden" id="title-en" dir="ltr">Hello ??</h1>
+
+        <p class="subtitle" id="subtitle-fa">
+          ?? ?? ??????? ?? ??? ? ???? ??? ?????.
+        </p>
+        <p class="subtitle hidden" id="subtitle-en" dir="ltr">
+          Welcome to a lightweight and fast web experience.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="#features">???? ????</a>
+          <a class="btn btn-ghost" href="https://vercel.com" target="_blank" rel="noopener noreferrer" dir="ltr">Vercel</a>
+        </div>
+      </div>
+
+      <div class="backdrop" aria-hidden="true">
+        <div class="gradient one"></div>
+        <div class="gradient two"></div>
+        <div class="grid"></div>
+      </div>
+    </main>
+
+    <section id="features" class="features">
+      <div class="container features-inner">
+        <article class="card">
+          <h2>????</h2>
+          <p>???? ?????????? ?????? ??? HTML? CSS ? JS ?????.</p>
+        </article>
+        <article class="card">
+          <h2>RTL/?????</h2>
+          <p>?????? ??????????? ???? ?????? ? ???????? ????.</p>
+        </article>
+        <article class="card">
+          <h2>?????/????</h2>
+          <p>???????? ???? ? ???? ?? ??? ??????? ???.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span id="foot-fa">????????? ?? ?? ???? ???</span>
+        <span id="foot-en" class="hidden" dir="ltr">Built with ?? for you</span>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

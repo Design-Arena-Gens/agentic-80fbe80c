@@ -1,0 +1,177 @@
+:root {
+  --bg: #0b1020;
+  --bg-soft: #0f1530;
+  --text: #f3f4f6;
+  --muted: #cbd5e1;
+  --brand: #7c3aed; /* purple-600 */
+  --brand-700: #6d28d9;
+  --ring: rgba(124, 58, 237, 0.4);
+  --card: #11162c;
+}
+
+.light {
+  --bg: #ffffff;
+  --bg-soft: #f7f7fb;
+  --text: #0b1020;
+  --muted: #4b5563;
+  --brand: #7c3aed;
+  --brand-700: #6d28d9;
+  --ring: rgba(124, 58, 237, 0.2);
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in oklab, var(--bg), transparent 10%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 92%);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand { display: inline-flex; gap: 10px; align-items: center; }
+.brand .logo { font-size: 20px; }
+.brand .brand-text { font-weight: 800; letter-spacing: 0.5px; }
+
+.actions { display: inline-flex; gap: 8px; }
+
+.btn {
+  appearance: none;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 80%);
+  background: color-mix(in oklab, var(--bg), var(--text) 2%);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .06s ease;
+}
+.btn:hover { border-color: color-mix(in oklab, var(--text), transparent 70%); }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--brand);
+  border-color: transparent;
+}
+.btn-primary:hover { background: var(--brand-700); }
+
+.btn-ghost {
+  background: transparent;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-inner {
+  padding: 84px 0 64px;
+  min-height: 62vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(42px, 7vw, 80px);
+  margin: 8px 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0 auto 22px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.cta { display: inline-flex; gap: 10px; }
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: clip;
+}
+
+.gradient {
+  position: absolute;
+  filter: blur(60px);
+  opacity: .45;
+  transform: translateZ(0);
+}
+.gradient.one {
+  width: 460px; height: 460px;
+  right: 5%; top: 5%;
+  background: radial-gradient(closest-side, #22d3ee, transparent 70%);
+}
+.gradient.two {
+  width: 560px; height: 560px;
+  left: 0; bottom: -8%;
+  background: radial-gradient(closest-side, #7c3aed, transparent 70%);
+}
+
+.grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(to right, color-mix(in oklab, var(--text), transparent 96%) 1px, transparent 1px),
+                    linear-gradient(to bottom, color-mix(in oklab, var(--text), transparent 96%) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 30%, black 35%, transparent 70%);
+}
+
+.features {
+  background: var(--bg-soft);
+  border-top: 1px solid color-mix(in oklab, var(--text), transparent 92%);
+  border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 92%);
+}
+
+.features-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 40px 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.1);
+}
+
+.site-footer {
+  padding: 22px 0 44px;
+}
+
+.hidden { display: none !important; }
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--ring);
+  border-radius: 10px;
+}
